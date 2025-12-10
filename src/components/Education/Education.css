@@ -1,0 +1,334 @@
+.education {
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.education-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 77, 0, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to left, black, transparent);
+  -webkit-mask-image: linear-gradient(to left, black, transparent);
+}
+
+.education-title-wrapper {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.education-title-wrapper .section-subtitle {
+  margin: 0 auto;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* University Section */
+.university-section {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.university-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.university-card:hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(255, 77, 0, 0.1);
+}
+
+.university-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light));
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.university-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.university-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.university-degree {
+  font-size: 1.1rem;
+  color: var(--accent-orange);
+  font-weight: 500;
+}
+
+.university-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.university-decoration {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  display: flex;
+  gap: 20px;
+}
+
+.decoration-circle {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed rgba(255, 77, 0, 0.2);
+  border-radius: 50%;
+}
+
+.decoration-circle:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  margin-top: 20px;
+}
+
+.decoration-circle:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
+}
+
+/* Subsection Titles */
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.title-icon {
+  font-size: 1.75rem;
+}
+
+/* Certifications */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.certification-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.certification-card:hover {
+  border-color: var(--border-hover);
+  transform: translateX(8px);
+}
+
+.cert-badge {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-orange-subtle);
+  border: 1px solid var(--accent-orange);
+  border-radius: var(--radius-md);
+  color: var(--accent-orange);
+  flex-shrink: 0;
+}
+
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cert-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.cert-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cert-issuer {
+  padding: 4px 12px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-orange);
+}
+
+.cert-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Achievements */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.achievement-card:hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.achievement-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.achievement-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.achievement-position {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .university-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  
+  .university-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .university-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .university-name {
+    font-size: 1.5rem;
+  }
+  
+  .university-location {
+    justify-content: center;
+  }
+  
+  .university-decoration {
+    display: none;
+  }
+  
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .subsection-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certification-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cert-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievement-card {
+    padding: 16px;
+  }
+  
+  .achievement-icon {
+    font-size: 1.5rem;
+  }
+}
+
