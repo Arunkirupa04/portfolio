@@ -89,17 +89,24 @@ const Skills = () => {
         }
       );
 
-      // Continuous rotation for orbit rings
-      gsap.to('.orbit-ring-inner', {
+      // Decoration rings rotation
+      gsap.to('.orbit-decoration.ring-1', {
         rotation: 360,
-        duration: 30,
+        duration: 60,
         repeat: -1,
         ease: 'none'
       });
 
-      gsap.to('.orbit-ring-outer', {
+      gsap.to('.orbit-decoration.ring-2', {
         rotation: -360,
-        duration: 45,
+        duration: 90,
+        repeat: -1,
+        ease: 'none'
+      });
+
+      gsap.to('.orbit-decoration.ring-3', {
+        rotation: 360,
+        duration: 120,
         repeat: -1,
         ease: 'none'
       });
@@ -156,10 +163,6 @@ const Skills = () => {
                   <div 
                     key={index} 
                     className="orbit-item"
-                    style={{ 
-                      '--rotation': `${index * 120}deg`,
-                      '--delay': `${index * 0.1}s`
-                    }}
                   >
                     <span className="orbit-icon">{tech.icon}</span>
                     <span className="orbit-name">{tech.name}</span>
@@ -172,10 +175,6 @@ const Skills = () => {
                   <div 
                     key={index} 
                     className="orbit-item"
-                    style={{ 
-                      '--rotation': `${index * 120 + 60}deg`,
-                      '--delay': `${(index + 3) * 0.1}s`
-                    }}
                   >
                     <span className="orbit-icon">{tech.icon}</span>
                     <span className="orbit-name">{tech.name}</span>

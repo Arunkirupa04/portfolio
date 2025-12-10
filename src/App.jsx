@@ -52,7 +52,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+      </div>
   );
 }
 

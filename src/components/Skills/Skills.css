@@ -152,11 +152,13 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Orbit rings - these rotate like a solar system */
 .orbit-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .orbit-ring-inner {
@@ -164,6 +166,7 @@
   height: 240px;
   margin-left: -120px;
   margin-top: -120px;
+  animation: orbitInner 20s linear infinite;
 }
 
 .orbit-ring-outer {
@@ -171,13 +174,12 @@
   height: 360px;
   margin-left: -180px;
   margin-top: -180px;
+  animation: orbitOuter 35s linear infinite reverse;
 }
 
+/* Orbit items positioned on the ring edge */
 .orbit-item {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: rotate(var(--rotation)) translateX(calc(50% + 20px)) rotate(calc(-1 * var(--rotation)));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,25 +188,95 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.orbit-ring-inner .orbit-item {
-  transform: rotate(var(--rotation)) translateX(100px) rotate(calc(-1 * var(--rotation)));
+/* Inner ring items - positioned at 0°, 120°, 240° on the circle */
+.orbit-ring-inner .orbit-item:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: counterRotateInner 20s linear infinite;
 }
 
-.orbit-ring-outer .orbit-item {
-  transform: rotate(var(--rotation)) translateX(160px) rotate(calc(-1 * var(--rotation)));
+.orbit-ring-inner .orbit-item:nth-child(2) {
+  top: 93.3%;
+  left: 93.3%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: counterRotateInner 20s linear infinite;
+}
+
+.orbit-ring-inner .orbit-item:nth-child(3) {
+  top: 93.3%;
+  left: 6.7%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: counterRotateInner 20s linear infinite;
+}
+
+/* Outer ring items - positioned at 60°, 180°, 300° on the circle */
+.orbit-ring-outer .orbit-item:nth-child(1) {
+  top: 6.7%;
+  left: 93.3%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: counterRotateOuter 35s linear infinite reverse;
+}
+
+.orbit-ring-outer .orbit-item:nth-child(2) {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: counterRotateOuter 35s linear infinite reverse;
+}
+
+.orbit-ring-outer .orbit-item:nth-child(3) {
+  top: 6.7%;
+  left: 6.7%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: counterRotateOuter 35s linear infinite reverse;
 }
 
 .orbit-item:hover {
   border-color: var(--accent-orange);
-  transform: rotate(var(--rotation)) translateX(100px) rotate(calc(-1 * var(--rotation))) scale(1.1);
   z-index: 20;
+  box-shadow: 0 0 20px var(--accent-orange-glow);
 }
 
-.orbit-ring-outer .orbit-item:hover {
-  transform: rotate(var(--rotation)) translateX(160px) rotate(calc(-1 * var(--rotation))) scale(1.1);
+/* Keyframes for orbital rotation */
+@keyframes orbitInner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitOuter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Counter-rotation to keep icons upright while orbiting */
+@keyframes counterRotateInner {
+  from {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(-360deg);
+  }
+}
+
+@keyframes counterRotateOuter {
+  from {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
 }
 
 .orbit-icon {
@@ -311,14 +383,6 @@
     margin-top: -150px;
   }
   
-  .orbit-ring-inner .orbit-item {
-    transform: rotate(var(--rotation)) translateX(80px) rotate(calc(-1 * var(--rotation)));
-  }
-  
-  .orbit-ring-outer .orbit-item {
-    transform: rotate(var(--rotation)) translateX(130px) rotate(calc(-1 * var(--rotation)));
-  }
-  
   .orbit-item {
     padding: 8px 12px;
   }
@@ -400,14 +464,6 @@
     height: 260px;
     margin-left: -130px;
     margin-top: -130px;
-  }
-  
-  .orbit-ring-inner .orbit-item {
-    transform: rotate(var(--rotation)) translateX(65px) rotate(calc(-1 * var(--rotation)));
-  }
-  
-  .orbit-ring-outer .orbit-item {
-    transform: rotate(var(--rotation)) translateX(110px) rotate(calc(-1 * var(--rotation)));
   }
   
   .orbit-item {

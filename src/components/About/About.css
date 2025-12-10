@@ -250,9 +250,14 @@
     font-size: 1.25rem;
   }
   
+  /* Hide traits and interests sections on mobile */
   .traits-section,
   .interests-section {
-    padding: 20px;
+    display: none;
+  }
+  
+  .about-details {
+    display: none;
   }
   
   .stat-card {

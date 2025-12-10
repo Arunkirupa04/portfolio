@@ -204,6 +204,15 @@
   filter: grayscale(0%);
 }
 
+/* Desktop image - show on desktop, hide on mobile */
+.hero-image-desktop {
+  display: block;
+}
+
+.hero-image-mobile {
+  display: none;
+}
+
 .hero-image-placeholder {
   display: none;
   width: 100%;
@@ -448,6 +457,81 @@
     height: 320px;
   }
   
+  /* Mobile image styling - professional gradient overlay with orange border */
+  .hero-image-border {
+    background: linear-gradient(
+      135deg, 
+      var(--accent-orange) 0%, 
+      rgba(255, 77, 0, 0.6) 25%,
+      transparent 50%,
+      rgba(255, 77, 0, 0.6) 75%,
+      var(--accent-orange) 100%
+    );
+    opacity: 0.8;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+  }
+  
+  /* Gradient overlay on mobile image - dark with subtle orange */
+  .hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(0, 0, 0, 0.4) 55%,
+      rgba(0, 0, 0, 0.7) 75%,
+      rgba(10, 5, 2, 0.85) 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 50%,
+      rgba(255, 77, 0, 0.08) 80%,
+      rgba(255, 77, 0, 0.12) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Subtle inner shadow for depth */
+  .hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-xl);
+    box-shadow: 
+      inset 0 0 40px rgba(0, 0, 0, 0.5),
+      inset 0 -80px 80px -40px rgba(0, 0, 0, 0.6),
+      inset 0 -40px 40px -20px rgba(255, 77, 0, 0.05);
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .hero-image-glow {
+    background: radial-gradient(ellipse at center bottom, rgba(255, 77, 0, 0.15) 0%, transparent 60%);
+  }
+  
+  /* Switch images on mobile */
+  .hero-image-desktop {
+    display: none;
+  }
+  
+  .hero-image-mobile {
+    display: block;
+  }
+  
   .hero-cta {
     flex-direction: column;
     width: 100%;
@@ -510,4 +594,3 @@
     right: 0;
   }
 }
-

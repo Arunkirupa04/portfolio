@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { personalInfo } from '../../data/portfolio-data';
-import aruPhoto from '../../assets/aru-photo.png';
+import aruPhotoDesktop from '../../assets/aru-photo.png';
+import aruPhotoMobile from '../../assets/aru-photo2.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -128,12 +129,19 @@ const Hero = () => {
             <div className="hero-image-glow"></div>
             <div className="hero-image-border"></div>
             <img 
-              src={aruPhoto} 
+              src={aruPhotoDesktop} 
               alt={personalInfo.name}
-              className="hero-image"
+              className="hero-image hero-image-desktop"
               onError={(e) => {
                 e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+            <img 
+              src={aruPhotoMobile} 
+              alt={personalInfo.name}
+              className="hero-image hero-image-mobile"
+              onError={(e) => {
+                e.target.style.display = 'none';
               }}
             />
             <div className="hero-image-placeholder">
