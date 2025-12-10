@@ -204,14 +204,6 @@
   filter: grayscale(0%);
 }
 
-/* Desktop image - show on desktop, hide on mobile */
-.hero-image-desktop {
-  display: block;
-}
-
-.hero-image-mobile {
-  display: none;
-}
 
 .hero-image-placeholder {
   display: none;
@@ -523,14 +515,6 @@
     background: radial-gradient(ellipse at center bottom, rgba(255, 77, 0, 0.15) 0%, transparent 60%);
   }
   
-  /* Switch images on mobile */
-  .hero-image-desktop {
-    display: none;
-  }
-  
-  .hero-image-mobile {
-    display: block;
-  }
   
   .hero-cta {
     flex-direction: column;
