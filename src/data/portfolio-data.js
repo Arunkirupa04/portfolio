@@ -4,7 +4,7 @@ export const personalInfo = {
   role: "Full-Stack Developer",
   currentPosition: "Associate Software Engineer",
   company: "iVedha Inc",
-  location: "Nallur, Jaffna",
+  location: "Jaffna, Sri Lanka",
   email: "arukirupa@gmail.com",
   phone: "+94 76-593-8086",
   languages: ["English (Professional)", "Tamil (Native)"],
