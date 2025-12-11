@@ -4,6 +4,31 @@
   overflow: hidden;
 }
 
+.about-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-gradient {
+  position: absolute;
+  top: 20%;
+  right: -20%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(255, 77, 0, 0.08) 0%, transparent 60%);
+  filter: blur(60px);
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
 .about::before {
   content: '';
   position: absolute;

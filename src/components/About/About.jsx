@@ -103,6 +103,9 @@ const About = () => {
 
   return (
     <section id="about" className="about section" ref={sectionRef}>
+      <div className="about-bg">
+        <div className="about-gradient"></div>
+      </div>
       <div className="container">
         <div className="about-title-wrapper">
           <h2 className="section-title">

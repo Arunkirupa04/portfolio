@@ -33,9 +33,104 @@ function App() {
 
     window.addEventListener('resize', handleResize);
 
+    // ===== PARALLAX EFFECTS =====
+    
+    // Hero section parallax
+    gsap.to('.hero-image-wrapper', {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    gsap.to('.hero-content', {
+      yPercent: -10,
+      opacity: 0.3,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    gsap.to('.floating-badges', {
+      yPercent: 30,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5
+      }
+    });
+
+    gsap.to('.hero-gradient', {
+      yPercent: -30,
+      scale: 1.2,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 2
+      }
+    });
+
+    // Section titles parallax
+    gsap.utils.toArray('.section-title').forEach((title) => {
+      gsap.fromTo(title, 
+        { y: 50 },
+        {
+          y: -20,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: title,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1
+          }
+        }
+      );
+    });
+
+    // Skills orbit parallax
+    gsap.to('.orbit-container', {
+      yPercent: -15,
+      rotation: 10,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.skills',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2
+      }
+    });
+
+    // Background gradients parallax
+    gsap.utils.toArray('.skills-gradient, .about-gradient').forEach((gradient) => {
+      gsap.to(gradient, {
+        yPercent: 30,
+        scale: 1.1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: gradient.parentElement,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 2
+        }
+      });
+    });
+
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { personalInfo } from '../../data/portfolio-data';
 import aruPhoto from '../../assets/aru-photo.png';
+import TextScramble from './TextScramble';
 import './Hero.css';
 
 const Hero = () => {
@@ -12,6 +13,7 @@ const Hero = () => {
   const ctaRef = useRef(null);
   const imageRef = useRef(null);
   const badgesRef = useRef(null);
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -92,7 +94,12 @@ const Hero = () => {
           </h1>
 
           <h2 className="hero-subtitle" ref={subtitleRef}>
-            I am a <span className="highlight">{personalInfo.role}</span>
+            I am a <span className="highlight">
+              <TextScramble 
+                text="Full-Stack Developer"
+                scrambleSpeed={50}
+              />
+            </span>
           </h2>
 
           <p className="hero-description" ref={descRef}>
