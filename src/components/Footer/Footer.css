@@ -1,5 +1,5 @@
 .footer {
-  background: var(--bg-primary);
+  background: transparent;
   position: relative;
   padding-top: 80px;
   overflow: hidden;
